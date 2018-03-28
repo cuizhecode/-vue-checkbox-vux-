@@ -1,0 +1,76 @@
+@import (reference) "../../style/common.less";
+.select-buyer {
+    .weui-cells_checkbox {
+        margin-top: -25px !important;
+        font-size: 28px;
+        .weui-cell {
+            padding: 40px 30px !important;
+            .vux-label-desc {
+                font-size: inherit;
+            }
+        }
+        & .weui-icon-checked:before {
+            font-size: 48px;
+        }
+        & .weui-check:checked+.vux-checklist-icon-checked:before {
+            color: @g-main-green;
+        }
+    }
+    .footer .weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before {
+        content: '\EA01';
+    }
+    .footer .weui-cells_checkbox .weui-check:checked+.vux-checklist-icon-checked:before {
+        color: #C9C9C9;
+    }
+}
+
+.pay-area {
+    position: fixed;
+    height: 94px;
+    background-color: @g-white;
+    display: flex;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    .pay-btn {
+        width: 220px;
+        text-align: center;
+        font-size: 36px;
+        /* px */
+        line-height: 94px;
+        color: @g-white;
+        background-color: @g-main-green;
+        .loading-img {
+            width: 40px;
+            vertical-align: -3px;
+            margin: 0 3px;
+        }
+    }
+    .pay-text {
+        font-size: 28px;
+        color: @g-font-default-color;
+        line-height: 54px;
+        /* px */
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+    .pay-money {
+        font-size: 48px;
+        /* px */
+        line-height: 54px;
+        /* px */
+        color: @g-font-dark-color;
+    }
+    .price-area {
+        flex: 1;
+        padding: 20px 30px;
+    }
+}
+
+.error {
+    padding-left: 15px;
+    line-height: 28px;
+    color: #888;
+    font-size: 12px;
+}

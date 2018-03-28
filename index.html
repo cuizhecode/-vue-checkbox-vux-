@@ -1,0 +1,49 @@
+<div class="select-buyer">
+    <checklist :options="fullValues"></checklist>
+    <span>id: {{selectedData}}</span>
+    <div class="weui-cells weui-cells_checkbox">
+        <label v-for='(item, index) in checkboxData' :key="item.id" class="weui-cell weui-check_label">
+            <div class="weui-cell__hd">
+                <input :value="item.id" v-model="checkBox.items[index]" @click="handleInputChange" type="checkbox" name="vux-checkbox" class="weui-check">
+                <i class="weui-icon-checked vux-checklist-icon-checked"></i>
+            </div>
+            <div class="weui-cell__bd">
+                <p>{{item.value}}价格：{{item.price}}</p>
+            </div>
+        </label>
+    </div>
+    <div class="vux-checklist-disabled">
+        <div class="weui-cells weui-cells_checkbox">
+            <label for="checkbox_7a25l_0" class="weui-cell weui-check_label">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" name="vux-checkbox-7a25l" id="" class="weui-check" value="1">
+                    <i class="weui-icon-checked vux-checklist-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>水岸东方阿斯顿阿三</p>
+                    <p>额外而为微软撒阿三撒旦</p>
+                    <p>额外而为微软撒阿三撒旦</p>
+                </div>
+            </label>
+        </div>
+    </div>
+    <footer :class="{footer:!isAllChecked}" class="pay-area">
+        <p class="price-area">
+            <span @click='checkedAll' class="pay-text weui-cells weui-cells_checkbox">
+                <label class="weui-cell weui-check_label">
+                    <div class="weui-cell__hd">
+                        <input v-model="isAllChecked" type="checkbox" name="vux-checkbox" class="weui-check">
+                        <i class="weui-icon-checked vux-checklist-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p>全选</p>
+                    </div>
+                </label>
+            </span>
+            <span class="pay-text">应付金额</span>
+            <span class="pay-money">&yen;{{calculatedTotal}}</span>
+        </p>
+        <p v-if="totalPurchasers == 0" class="pay-btn">结算</p>
+        <p v-else class="pay-btn">结算({{totalPurchasers}})</p>
+    </footer>
+</div>
